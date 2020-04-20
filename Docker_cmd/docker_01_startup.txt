@@ -1,0 +1,9 @@
+> docker-machine ls --> listing all existing docker machines
+> docker-machine start --> starting docker machine (default) 
+
+> docker version --> listing details regarding docker and docker server
+
+# cmder.net configuration 
+
+docker-machine env default
+Copy the last row of the outup should solve the issue with server connection

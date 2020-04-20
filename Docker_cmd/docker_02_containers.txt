@@ -1,0 +1,27 @@
+------------
+> docker version --> listing details regarding docker and docker server
+> docker info --> lists docker informations i.e. how many containers/images exist and run/stop
+
+------------
+#Creating containers
+> docker container run --publish 80:80 nginx --> starting nginx container with logs attached in the terminal
+> docker container run --publish -d (or --detach) 80:80 nginx --> starting nginx container with logs attached in the terminal
+> docker container run --publish 8080:80 --name webhost -d ngingx:1.11 nginx -T --> 8080:80 -- chaning host listetning port ngingx:1.11 -- setting image version -T -- changing CMD to run on start
+
+#Viewing containers
+> docker container ls --> lists all running containers 
+> docker container ls -a --> lists all containers (working/stopped)
+
+#Stoping container
+> docker container stop moby_dock --> stops the container
+
+> docker cntainer logs moby_dock --> shows all logs for running moby_dock container
+> docker container top moby_dock --> shows stats for moby_dock container 
+
+#Deleting containers
+> docker container rm moby_dock --> deletes moby_dock container (end every other typed after moby_dock)/(add -f or --force to force delete if running) 
+
+------------
+> docker container top moby_dock --> shows stats for moby_dock container 
+> docker container inspect moby_dock --> outputs json's array 
+> docker container stats --> highlights all the statistics for running containers
