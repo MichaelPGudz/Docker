@@ -22,6 +22,28 @@
 > docker container rm moby_dock --> deletes moby_dock container (end every other typed after moby_dock)/(add -f or --force to force delete if running) 
 
 ------------
+#Show stats/logs
 > docker container top moby_dock --> shows stats for moby_dock container 
 > docker container inspect moby_dock --> outputs json's array 
 > docker container stats --> highlights all the statistics for running containers
+
+------------
+#Interactive run
+> docker container run -it --> start new container interactively (-i -- keeps session open, -t -- simulates a real terminal)
+> docker container exec -it -->
+
+> docker container run -it --name container_name nginx bash --> (bash -- opens a terminal to type commands from inside a container)
+> docker container run -it --name ubuntu ubuntu --> no need to type bash, because its default CMD is bash 
+$ apt-get update
+$ apt-get install -y curl
+> docker container run -it alpine sh --> running alpine
+
+#Starting interactive container
+> docker container start -ai ubuntu --> re-running the ubuntu container
+
+#Running shell in a running container (MySQL or Nginx)
+> docker container exec -it mysql bash --> running bash in mysql container 
+$ apt-get update && apt-get install -y procps
+
+#Pulling docker image
+> docker pull alpine --> docker pulls Linux alpine image from docker hub
