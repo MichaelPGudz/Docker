@@ -6,7 +6,8 @@
 #Creating containers
 > docker container run --publish 80:80 nginx --> starting nginx container with logs attached in the terminal
 > docker container run --publish -d (or --detach) 80:80 nginx --> starting nginx container with logs attached in the terminal
-> docker container run --publish 8080:80 --name webhost -d ngingx:1.11 nginx -T --> 8080:80 -- chaning host listetning port ngingx:1.11 -- setting image version -T -- changing CMD to run on start
+> docker container run --publish 8080:80 --name webhost -d ngingx:1.11 nginx -T --> 8080:80 -- changing host listetning port ngingx:1.11 -- setting image version -T -- changing CMD to run on start
+> docker container run -p 3306:3306 -d --name db -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql --> starting container 
 
 #Viewing containers
 > docker container ls --> lists all running containers 
