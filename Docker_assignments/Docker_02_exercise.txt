@@ -1,0 +1,11 @@
+------------
+> docker network create dude
+
+> docker container run -d --net dude --net-alias search elasticsearch:2 --> could go with --network and --network-alias as well 
+> docker container run -d --net dude --net-alias search elasticsearch:2 --> (since we're not specifying the name of the container we can pass the same command twice)
+
+# Checking the output addresses
+> docker container run --rm --net dude alpine:3.10 nslookup search
+
+> docker container run --rm -net dude centos curl -s search:9200
+> docker container run --rm -net dude centos curl -s search:9200

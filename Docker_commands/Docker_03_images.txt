@@ -1,0 +1,12 @@
+------------
+> docker images
+        or 
+> docker image ls --> shows a list of downloaded images
+
+------------
+#Pulling images
+> docker pull nginx
+
+# Always specify the exact version of image -- that way you ommit problem with different software version when going to production
+
+------------
