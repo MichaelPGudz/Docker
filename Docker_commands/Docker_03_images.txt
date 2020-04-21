@@ -10,3 +10,15 @@
 # Always specify the exact version of image -- that way you ommit problem with different software version when going to production
 
 ------------
+#Docker image history
+> docker history nginx:latest
+> docker image history nginx:latest --> show layers of changes made in image
+
+#Copy-on-write concept -- 
+
+> docker image inspect nginx --> all details about the image
+
+------------
+#Image tags
+> docker image tag
+<user>/<repository>:<tag> -- default tag is latest if not specified

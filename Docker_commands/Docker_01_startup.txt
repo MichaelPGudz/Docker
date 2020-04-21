@@ -6,4 +6,4 @@
 # cmder.net configuration 
 
 docker-machine env default
-Copy the last row of the outup should solve the issue with server connection
+Copy the last row of the output should solve the issue with server connection
