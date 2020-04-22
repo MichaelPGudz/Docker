@@ -20,5 +20,19 @@
 
 ------------
 #Image tags
-> docker image tag
+> docker image tag nginx michaelp/nginx --> source_image[:tag] (latest by default) target_image[:tag]
 <user>/<repository>:<tag> -- default tag is latest if not specified
+
+#Pushing image to docker hub
+> docker image push michaelp/nginx --> push image onto your Docker Hub account (but first you have to login)
+
+#Login/Logout
+> docker login --> login to Docker Hub by default but can override by adding server url
+> docker logout --> logout from Docker Hub
+
+------------
+#Dockerfile
+cd dockerfile-sample-1
+vim Dockerfile --> to open the dockerfile
+
+> docker build -f some-docekerfile
