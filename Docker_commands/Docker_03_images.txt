@@ -31,8 +31,9 @@
 > docker logout --> logout from Docker Hub
 
 ------------
-#Dockerfile
+#Building a Dockerfile
 cd dockerfile-sample-1
 vim Dockerfile --> to open the dockerfile
 
 > docker build -f some-docekerfile
+> docker build -t testnode . --> "." to build in the directory where dockerfile is

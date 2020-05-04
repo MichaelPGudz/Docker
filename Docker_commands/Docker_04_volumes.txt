@@ -1,0 +1,14 @@
+------------
+#Cleaning docker volumes/images
+
+> docker system prune --> to cleaning everything up
+> docker image prune --> to clean dangling images
+> docker image prune -a --> to delete all not used images
+> docker volume prune --> to clean up unused volumes
+
+#Listing space usage
+> docker system df --> to list space usage for all images, volumes, containers
+
+#Docker volume listing/naming 
+> docker volume ls
+> docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql --> Creating a name for a volume "mysql-db:" in the default directory 
