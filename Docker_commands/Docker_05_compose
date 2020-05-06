@@ -1,0 +1,11 @@
+------------
+# Docker compose 
+> docker-compose up --> setup volumes/networks and start all containers
+> docker-compose down --> stop all containers and remove containers/volumes/networks
+
+> docker-compose up -d --> to run in background
+> docker-compose logs --> to show logs
+
+#Features
+> docker-compose ps
+> docker-compose top

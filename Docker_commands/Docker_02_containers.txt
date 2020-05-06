@@ -16,7 +16,7 @@
 #Stoping container
 > docker container stop moby_dock --> stops the container
 
-> docker cntainer logs moby_dock --> shows all logs for running moby_dock container
+> docker container logs moby_dock --> shows all logs for running moby_dock container
 > docker container top moby_dock --> shows stats for moby_dock container 
 
 #Deleting containers
