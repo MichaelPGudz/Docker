@@ -1,0 +1,34 @@
+------------
+#To check if swarm is active
+> docker info
+
+#Checking IP address before initializing swarm
+> docker-machine ip default
+
+> docker swarm init --address-addr 192.168.99.110
+
+> docker node ls --> to list all nodes
+
+# Service in a swarm replaces the Docker Run command
+
+> docker service create alpine ping 8.8.8.8
+> docker service ls 
+> docker service ps service_name --> to show list details/containers of the service
+> doccker service update service_name/ID --replicas 3
+
+> docker container rm -f service_name.1.ID
+
+------------
+> docker-machine create node1 --> to start a new machine called node1
+> docker-machine ssh node1 --> to jump into node1 machine
+OR
+> docker-machine env node1 --> switch to the machine you would like to use
+$ eval $("C:\Program Files\Docker Toolbox\docker-machine.exe" env node1) --> to change to the node1 machine
+
+> docker node update --role manager node2 --> to promote worker node to a manager
+> docker swarm join-token manager
+
+#Creating services on docker swarm nodes
+> docker service create --replicas 3 alpine ping 8.8.8.8
+
+> docker node ps
