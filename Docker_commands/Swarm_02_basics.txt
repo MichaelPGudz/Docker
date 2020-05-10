@@ -1,0 +1,42 @@
+------------
+#Creating overlay network in Swarm
+> docker network create --driver overlay mydrupal
+
+> docker service create --name psql --network mydrupal -e POSTGRES_PASSWORD=password postgres
+> docker service create --name drupal --network mydrupal -p 80:80 drupal
+
+> watch docker service ls --> to re run the command over every 2 second
+
+> docker service create --name vote --network frontend -p 80:80 --replicas 2 bretfisher/examplevotingapp_vote
+> docker service create --name redis --network frontend --replicas 1 redis:3.2
+> docker service create --name worker --network frontend --network backend --replicas 1 bretfisher/examplevotingapp_worker:java
+> docker service create --name db --network backend --replicas 1 -e POSTGRES_HOST_AUTH_METHOD=trust --mount type=volume,source=db-data,target=/var/lib/postgresql/data postgres:9.4
+> docker service create --name result --network backend -p 5001:80 --replicas 1 bretfisher/examplevotingapp_result
+
+------------
+#Running Stacks
+> docker stack deploy -c example-voting-app-stack.yml voteapp
+
+> docker stack ls --> to show number of services in a stack
+> docker stack ps voteapp --> to list exact tasks in a stack called voteapp
+> docker stack services voteapp --> to list services, # of replicas, images
+
+------------
+#Secrets
+> docker secret create psql_user psql_user.txt
+> echo "myDBpassWORD" | docker secret create psql_pass -
+
+> docker service create --name psql --secret psql_user --secret psql_pass -e POSTGRES_PASSWORD_FILE=/run/secrets/psql_pass -e POSTGRES_USER_FILE=/run/secrets/psql_user postgres
+> docker exec -it psql.1.aiosc0lhre47xwfpa7yg8nnd5 bash --> running bash in the container of node1 swarm
+$ ls /run/secrets/
+
+> docker service update --secret-rm --> to remove secret
+
+> docker stack deploy -c docker-compose.yml mydb
+> docker stack rm mydb --> to remove stack
+
+------------
+#Assignment
+> echo "user" | docker secret create psql-usr -
+> echo "password" | docker secret create psql-pw -
+> echo "123" | docker secret create psql-pw2 -
